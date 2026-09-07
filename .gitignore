@@ -1,0 +1,32 @@
+# FRMF data
+data/raw/*
+data/processed/*
+data/exports/*
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Power BI
+*.pbix
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Generated/private outputs
+artifacts/*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+data/ 
+mydata 2.0/
