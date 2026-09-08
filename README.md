@@ -1,5 +1,5 @@
 # FRMF performance analytics
-PFA project for: 
+project for: 
 - football performance analytics
 - power BI dashboards
 - AI assistant for querying football data
