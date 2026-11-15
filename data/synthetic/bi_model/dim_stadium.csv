@@ -1,0 +1,25 @@
+﻿stadium_id,name,location,is_synthetic
+1,Casablanca Demo Ground 1,Casablanca,1
+2,Casablanca Demo Ground 2,Casablanca,1
+3,Rabat Demo Ground 3,Rabat,1
+4,Rabat Demo Ground 4,Rabat,1
+5,Berkane Demo Ground 5,Berkane,1
+6,Fès Demo Ground 6,Fès,1
+7,Agadir Demo Ground 7,Agadir,1
+8,Tanger Demo Ground 8,Tanger,1
+9,Safi Demo Ground 9,Safi,1
+10,El Jadida Demo Ground 10,El Jadida,1
+11,Meknès Demo Ground 11,Meknès,1
+12,Rabat Demo Ground 12,Rabat,1
+13,Zemamra Demo Ground 13,Zemamra,1
+14,Marrakech Demo Ground 14,Marrakech,1
+15,Oujda Demo Ground 15,Oujda,1
+16,Tétouan Demo Ground 16,Tétouan,1
+17,Casablanca Demo Ground 17,Casablanca,1
+18,Témara Demo Ground 18,Témara,1
+19,Tanger Demo Ground 19,Tanger,1
+20,Laâyoune Demo Ground 20,Laâyoune,1
+21,Aït Iazza Demo Ground 21,Aït Iazza,1
+22,Marrakech Demo Ground 22,Marrakech,1
+23,Assa Demo Ground 23,Assa,1
+999,Federation Demo Ground,Morocco — simulated venue,1

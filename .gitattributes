@@ -1,0 +1,5 @@
+* text=auto
+*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol
+*.pbix binary
+*.pdf binary
+*.png binary

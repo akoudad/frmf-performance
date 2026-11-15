@@ -1,0 +1,13 @@
+{
+  "name": "frmf-assistant",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "model": "node model.mjs",
+    "test": "node --test test.mjs local-model.test.mjs model-health.test.mjs ranking.test.mjs progress.test.mjs season-selection.test.mjs analytical-data.test.mjs analytical-agent.test.mjs answer-contract.test.mjs result-sections.test.mjs snapshot-store.test.mjs && python3 -m unittest source_catalog_test.py",
+    "snapshot": "python3 build_snapshot.py"
+  },
+  "engines": { "node": ">=22" }
+}

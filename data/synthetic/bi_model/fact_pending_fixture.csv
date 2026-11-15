@@ -1,0 +1,11 @@
+﻿slot_id,edition_id,stage,round_label,scheduled_date,home_source,away_source,note,is_synthetic
+SYN-2026-C05-PQF1,SYN-2026-C05,QF,QF,2027-01-13,Winner prior tie 1,Winner prior tie 2,Participants unresolved at simulated snapshot.,1
+SYN-2026-C05-PQF2,SYN-2026-C05,QF,QF,2027-01-13,Winner prior tie 3,Winner prior tie 4,Participants unresolved at simulated snapshot.,1
+SYN-2026-C05-PQF3,SYN-2026-C05,QF,QF,2027-01-13,Winner prior tie 5,Winner prior tie 6,Participants unresolved at simulated snapshot.,1
+SYN-2026-C05-PQF4,SYN-2026-C05,QF,QF,2027-01-13,Winner prior tie 7,Winner prior tie 8,Participants unresolved at simulated snapshot.,1
+SYN-2026-C05-PSF1,SYN-2026-C05,SF,SF,2027-03-10,Winner prior tie 1,Winner prior tie 2,Participants unresolved at simulated snapshot.,1
+SYN-2026-C05-PSF2,SYN-2026-C05,SF,SF,2027-03-10,Winner prior tie 3,Winner prior tie 4,Participants unresolved at simulated snapshot.,1
+SYN-2026-C05-PFINAL1,SYN-2026-C05,FINAL,FINAL,2027-05-19,Winner prior tie 1,Winner prior tie 2,Participants unresolved at simulated snapshot.,1
+SYN-2026-C06-PSF1,SYN-2026-C06,SF,SF,2027-06-13,Group rank 1,Group rank 4,Participants unresolved at simulated snapshot.,1
+SYN-2026-C06-PSF2,SYN-2026-C06,SF,SF,2027-06-13,Group rank 2,Group rank 3,Participants unresolved at simulated snapshot.,1
+SYN-2026-C06-PFINAL1,SYN-2026-C06,FINAL,FINAL,2027-06-17,Winner SF1,Winner SF2,Participants unresolved at simulated snapshot.,1

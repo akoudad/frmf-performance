@@ -1,0 +1,14 @@
+{
+  "name": "frmf-performance",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prestart": "npm run snapshot",
+    "start": "npm --prefix assistant start",
+    "model": "npm --prefix assistant run model",
+    "pretest": "npm run snapshot",
+    "test": "npm --prefix assistant test",
+    "snapshot": "npm --prefix assistant run snapshot"
+  },
+  "engines": { "node": ">=22" }
+}

@@ -1,0 +1,112 @@
+{
+  "dataset": "FRMF Synthetic V4 with V5 primary-assist replacements",
+  "is_synthetic": true,
+  "snapshot_date": "2026-09-11",
+  "tables": {
+    "dim_card_reason": {
+      "file": "bi_model/dim_card_reason.csv",
+      "rows": 10,
+      "sha256": "11cd8ed3ee0b36e8780c085ccafc7842e38a501c2eeb6d61302e483ac7c0ff77"
+    },
+    "dim_competition": {
+      "file": "bi_model/dim_competition.csv",
+      "rows": 6,
+      "sha256": "b46d8fc977367dfa057f441a587702fee75091fbcc5326809cecdb9784ed0212"
+    },
+    "dim_edition": {
+      "file": "bi_model/dim_edition.csv",
+      "rows": 36,
+      "sha256": "3448da7b952112dcf3095defcfcbf5d7568df5cf6637c041ac20b9f8c809d503"
+    },
+    "dim_match": {
+      "file": "bi_model/dim_match.csv",
+      "rows": 3950,
+      "sha256": "8f78d39bfe85c2493365d71f770d99b60c165808a67ffc0cb112377df51fd40c"
+    },
+    "dim_organization": {
+      "file": "bi_model/dim_organization.csv",
+      "rows": 27,
+      "sha256": "9d7fe9a394f7a752ab2aaea1c1c62f7287ccf4ef98032e7185391a6e5e2a51b7"
+    },
+    "dim_player": {
+      "file": "bi_model/dim_player.csv",
+      "rows": 2164,
+      "sha256": "87f3fc3860674cb9ac4b813434fb3d12f6344e2e5416d0ca1bad54c139829e96"
+    },
+    "dim_referee": {
+      "file": "bi_model/dim_referee.csv",
+      "rows": 72,
+      "sha256": "04a3775a2e90b9b7cff8c9c9d7cff92dc89539c4d2f18fafab09e117a3642801"
+    },
+    "dim_stadium": {
+      "file": "bi_model/dim_stadium.csv",
+      "rows": 24,
+      "sha256": "5fdc40c46a2a2278a7c48437a0f39b8e46bdc0297c1ff0b13cda9d25420c1d39"
+    },
+    "dim_team": {
+      "file": "bi_model/dim_team.csv",
+      "rows": 56,
+      "sha256": "053a9cc2557f33544cf2807f500c8d4fafe77b641961bb584edb6327a8a3e1cf"
+    },
+    "fact_competition_entry": {
+      "file": "bi_model/fact_competition_entry.csv",
+      "rows": 432,
+      "sha256": "8a573a04932c21eadf0329eba28ce37829ea77286ca8b53716909865e01e8e9c"
+    },
+    "fact_discipline_event": {
+      "file": "bi_model/fact_discipline_event.csv",
+      "rows": 12849,
+      "sha256": "1296b0a0959b8793170a770b6c96c2287bddcbfd6646e641fe82579f5f95883c"
+    },
+    "fact_fixture_team": {
+      "file": "bi_model/fact_fixture_team.csv",
+      "rows": 7900,
+      "sha256": "42811c8dcbbbed6b44c21d94eac4fe3bf6106f847815b073f9fb53416ac8f80d"
+    },
+    "fact_injury_incident": {
+      "file": "bi_model/fact_injury_incident.csv",
+      "rows": 1593,
+      "sha256": "56c70538afaa1bc98718f45ceb23a6fce5a191b22350cd4e68c86fce8bf9c563"
+    },
+    "fact_match_coverage": {
+      "file": "bi_model/fact_match_coverage.csv",
+      "rows": 31600,
+      "sha256": "9e6c2159269d347453fb5eae4b170d1c705a71c70e68c51745194c2eca32c3bf"
+    },
+    "fact_match_event": {
+      "file": "bi_model/fact_match_event.csv",
+      "rows": 43464,
+      "sha256": "96ec75f09db57f3d4a185614587a7b98a9a49e0c880471d41103e3af0ad0ef76"
+    },
+    "fact_membership": {
+      "file": "bi_model/fact_membership.csv",
+      "rows": 7680,
+      "sha256": "fe4e5d329efbb912a0b1111fad8a6441fcbcb83c079b16b106603b3ea4147a80"
+    },
+    "fact_pending_fixture": {
+      "file": "bi_model/fact_pending_fixture.csv",
+      "rows": 10,
+      "sha256": "ee7f724032e4e71f1e0928bbddfacaf8ad87ce2ed546d8284456a76c9f50e4bd"
+    },
+    "fact_player_match": {
+      "file": "bi_model/fact_player_match.csv",
+      "rows": 120672,
+      "sha256": "52e63c0aff12f29dd7647e92404cf297ef1951e603de60ab64e0f000c57c035d"
+    },
+    "fact_referee_assignment": {
+      "file": "bi_model/fact_referee_assignment.csv",
+      "rows": 3950,
+      "sha256": "5a4e6defceb412df401f22f150f24aaec8ac80c4f7243189c0005e03e739d677"
+    },
+    "fact_team_match": {
+      "file": "bi_model/fact_team_match.csv",
+      "rows": 6704,
+      "sha256": "b29f817bb08c32bbf20e0925f1b79b5d79a8ff6da62951ebb5a8f74e84d9c5ae"
+    },
+    "fact_tie_result": {
+      "file": "bi_model/fact_tie_result.csv",
+      "rows": 90,
+      "sha256": "2383918837880832ca870868192aeeff335e25c509f4b172872fdc278dcae134"
+    }
+  }
+}

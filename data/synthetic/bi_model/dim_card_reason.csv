@@ -1,0 +1,11 @@
+﻿applicable_card_type,is_synthetic,reason_category,reason_code,reason_label
+YELLOW,1,FOUL,RECKLESS_CHALLENGE,Reckless challenge
+YELLOW,1,CONDUCT,DISSENT,Dissent
+YELLOW,1,RESTART,DELAYING_RESTART,Delaying restart
+YELLOW,1,FOUL,PERSISTENT_FOULING,Persistent fouling
+YELLOW,1,CONDUCT,UNSPORTING_CONDUCT,Unsporting conduct
+RED,1,DISMISSAL,SERIOUS_FOUL_PLAY,Serious foul play
+RED,1,DISMISSAL,VIOLENT_CONDUCT,Violent conduct
+RED,1,DISMISSAL,DENYING_SCORING_CHANCE,Denying scoring chance
+RED,1,ACCUMULATION,SECOND_CAUTION,Second caution
+BOTH,1,UNSPECIFIED,UNSPECIFIED,Unspecified

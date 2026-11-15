@@ -1,0 +1,57 @@
+﻿team_id,team_name,team_label,organization_id,country,category,age_group,team_type,is_synthetic,team_short_name,city,badge_code
+1001,Raja Club Athletic,Raja Club Athletic,1,Morocco,MEN,SENIOR,CLUB,1,Raja Casablanca,Casablanca,RCA
+1002,Wydad Athletic Club,Wydad Athletic Club,2,Morocco,MEN,SENIOR,CLUB,1,Wydad Casablanca,Casablanca,WAC
+1003,Association Sportive des Forces Armées Royales,Association Sportive des Forces Armées Royales,3,Morocco,MEN,SENIOR,CLUB,1,AS FAR,Rabat,ASFAR
+1004,Fath Union Sport,Fath Union Sport,4,Morocco,MEN,SENIOR,CLUB,1,FUS Rabat,Rabat,FUS
+1005,Renaissance Sportive de Berkane,Renaissance Sportive de Berkane,5,Morocco,MEN,SENIOR,CLUB,1,RS Berkane,Berkane,RSB
+1006,Maghreb Association Sportive,Maghreb Association Sportive,6,Morocco,MEN,SENIOR,CLUB,1,Maghreb Fès,Fès,MAS
+1007,Hassania Union Sport d’Agadir,Hassania Union Sport d’Agadir,7,Morocco,MEN,SENIOR,CLUB,1,Hassania Agadir,Agadir,HUSA
+1008,Ittihad Riadi de Tanger,Ittihad Riadi de Tanger,8,Morocco,MEN,SENIOR,CLUB,1,Ittihad Tanger,Tanger,IRT
+1009,Olympic Club de Safi,Olympic Club de Safi,9,Morocco,MEN,SENIOR,CLUB,1,Olympic Safi,Safi,OCS
+1010,Difaâ Hassani d’El Jadida,Difaâ Hassani d’El Jadida,10,Morocco,MEN,SENIOR,CLUB,1,Difaâ El Jadida,El Jadida,DHJ
+1011,Club Omnisport de Meknès,Club Omnisport de Meknès,11,Morocco,MEN,SENIOR,CLUB,1,COD Meknès,Meknès,CODM
+1012,Union Touarga,Union Touarga,12,Morocco,MEN,SENIOR,CLUB,1,Union Touarga,Rabat,UTS
+1013,Renaissance Athletic Club de Zemamra,Renaissance Athletic Club de Zemamra,13,Morocco,MEN,SENIOR,CLUB,1,Renaissance Zemamra,Zemamra,RCAZ
+1014,Kawkab Athletic Club de Marrakech,Kawkab Athletic Club de Marrakech,14,Morocco,MEN,SENIOR,CLUB,1,Kawkab Marrakech,Marrakech,KACM
+1015,Mouloudia d’Oujda,Mouloudia d’Oujda,15,Morocco,MEN,SENIOR,CLUB,1,Mouloudia Oujda,Oujda,MCO
+1016,Moghreb Athletic Tétouan,Moghreb Athletic Tétouan,16,Morocco,MEN,SENIOR,CLUB,1,Moghreb Tétouan,Tétouan,MAT
+1101,Association Sportive des Forces Armées Royales Women,Association Sportive des Forces Armées Royales Women,3,Morocco,WOMEN,SENIOR,CLUB,1,AS FAR Women,Rabat,ASFAR
+1102,Wydad Athletic Club Women,Wydad Athletic Club Women,2,Morocco,WOMEN,SENIOR,CLUB,1,Wydad Casablanca Women,Casablanca,WAC
+1103,Fath Union Sport Women,Fath Union Sport Women,4,Morocco,WOMEN,SENIOR,CLUB,1,FUS Rabat Women,Rabat,FUS
+1104,Renaissance Sportive de Berkane Women,Renaissance Sportive de Berkane Women,5,Morocco,WOMEN,SENIOR,CLUB,1,RS Berkane Women,Berkane,RSB
+1105,Union Touarga Women,Union Touarga Women,12,Morocco,WOMEN,SENIOR,CLUB,1,Union Touarga Women,Rabat,UTS
+1106,Sporting Club Casablanca Women,Sporting Club Casablanca Women,17,Morocco,WOMEN,SENIOR,CLUB,1,Sporting Casablanca Women,Casablanca,SCC
+1107,Hilal Témara Sportif Women,Hilal Témara Sportif Women,18,Morocco,WOMEN,SENIOR,CLUB,1,Hilal Témara Women,Témara,HST
+1108,Ittihad de Tanger de Football Féminin Women,Ittihad de Tanger de Football Féminin Women,19,Morocco,WOMEN,SENIOR,CLUB,1,Ittihad Tanger Féminin Women,Tanger,ITFF
+1109,Association Municipale de Laayoune de Football Féminin Women,Association Municipale de Laayoune de Football Féminin Women,20,Morocco,WOMEN,SENIOR,CLUB,1,Municipalité Laâyoune Women,Laâyoune,AMLFF
+1110,Association Jeunesse Raja Ait Iazza Women,Association Jeunesse Raja Ait Iazza Women,21,Morocco,WOMEN,SENIOR,CLUB,1,Raja Aït Iazza Women,Aït Iazza,ARAFF
+1111,Phoenix Rising Marrakech Women,Phoenix Rising Marrakech Women,22,Morocco,WOMEN,SENIOR,CLUB,1,Phoenix Marrakech Women,Marrakech,PFAM
+1112,Lionnes Assa-Mahbès Women,Lionnes Assa-Mahbès Women,23,Morocco,WOMEN,SENIOR,CLUB,1,Lionnes Assa-Mahbès Women,Assa,ALAMFF
+1201,Raja Club Athletic U19,Raja Club Athletic U19,1,Morocco,MEN,U19,CLUB,1,Raja Casablanca U19,Casablanca,RCA
+1202,Wydad Athletic Club U19,Wydad Athletic Club U19,2,Morocco,MEN,U19,CLUB,1,Wydad Casablanca U19,Casablanca,WAC
+1203,Association Sportive des Forces Armées Royales U19,Association Sportive des Forces Armées Royales U19,3,Morocco,MEN,U19,CLUB,1,AS FAR U19,Rabat,ASFAR
+1204,Fath Union Sport U19,Fath Union Sport U19,4,Morocco,MEN,U19,CLUB,1,FUS Rabat U19,Rabat,FUS
+1205,Renaissance Sportive de Berkane U19,Renaissance Sportive de Berkane U19,5,Morocco,MEN,U19,CLUB,1,RS Berkane U19,Berkane,RSB
+1206,Maghreb Association Sportive U19,Maghreb Association Sportive U19,6,Morocco,MEN,U19,CLUB,1,Maghreb Fès U19,Fès,MAS
+1207,Hassania Union Sport d’Agadir U19,Hassania Union Sport d’Agadir U19,7,Morocco,MEN,U19,CLUB,1,Hassania Agadir U19,Agadir,HUSA
+1208,Ittihad Riadi de Tanger U19,Ittihad Riadi de Tanger U19,8,Morocco,MEN,U19,CLUB,1,Ittihad Tanger U19,Tanger,IRT
+1209,Olympic Club de Safi U19,Olympic Club de Safi U19,9,Morocco,MEN,U19,CLUB,1,Olympic Safi U19,Safi,OCS
+1210,Difaâ Hassani d’El Jadida U19,Difaâ Hassani d’El Jadida U19,10,Morocco,MEN,U19,CLUB,1,Difaâ El Jadida U19,El Jadida,DHJ
+1211,Club Omnisport de Meknès U19,Club Omnisport de Meknès U19,11,Morocco,MEN,U19,CLUB,1,COD Meknès U19,Meknès,CODM
+1212,Union Touarga U19,Union Touarga U19,12,Morocco,MEN,U19,CLUB,1,Union Touarga U19,Rabat,UTS
+1301,Association Sportive des Forces Armées Royales Women U19,Association Sportive des Forces Armées Royales Women U19,3,Morocco,WOMEN,U19,CLUB,1,AS FAR Women U19,Rabat,ASFAR
+1302,Wydad Athletic Club Women U19,Wydad Athletic Club Women U19,2,Morocco,WOMEN,U19,CLUB,1,Wydad Casablanca Women U19,Casablanca,WAC
+1303,Fath Union Sport Women U19,Fath Union Sport Women U19,4,Morocco,WOMEN,U19,CLUB,1,FUS Rabat Women U19,Rabat,FUS
+1304,Renaissance Sportive de Berkane Women U19,Renaissance Sportive de Berkane Women U19,5,Morocco,WOMEN,U19,CLUB,1,RS Berkane Women U19,Berkane,RSB
+1305,Union Touarga Women U19,Union Touarga Women U19,12,Morocco,WOMEN,U19,CLUB,1,Union Touarga Women U19,Rabat,UTS
+1306,Sporting Club Casablanca Women U19,Sporting Club Casablanca Women U19,17,Morocco,WOMEN,U19,CLUB,1,Sporting Casablanca Women U19,Casablanca,SCC
+1307,Hilal Témara Sportif Women U19,Hilal Témara Sportif Women U19,18,Morocco,WOMEN,U19,CLUB,1,Hilal Témara Women U19,Témara,HST
+1308,Ittihad de Tanger de Football Féminin Women U19,Ittihad de Tanger de Football Féminin Women U19,19,Morocco,WOMEN,U19,CLUB,1,Ittihad Tanger Féminin Women U19,Tanger,ITFF
+1309,Association Municipale de Laayoune de Football Féminin Women U19,Association Municipale de Laayoune de Football Féminin Women U19,20,Morocco,WOMEN,U19,CLUB,1,Municipalité Laâyoune Women U19,Laâyoune,AMLFF
+1310,Association Jeunesse Raja Ait Iazza Women U19,Association Jeunesse Raja Ait Iazza Women U19,21,Morocco,WOMEN,U19,CLUB,1,Raja Aït Iazza Women U19,Aït Iazza,ARAFF
+1311,Phoenix Rising Marrakech Women U19,Phoenix Rising Marrakech Women U19,22,Morocco,WOMEN,U19,CLUB,1,Phoenix Marrakech Women U19,Marrakech,PFAM
+1312,Lionnes Assa-Mahbès Women U19,Lionnes Assa-Mahbès Women U19,23,Morocco,WOMEN,U19,CLUB,1,Lionnes Assa-Mahbès Women U19,Assa,ALAMFF
+2001,Morocco Women,Morocco Women,101,Morocco,WOMEN,SENIOR,NATIONAL,1,Morocco,Demo host,MAR
+2002,Senegal Women,Senegal Women,102,Senegal,WOMEN,SENIOR,NATIONAL,1,Senegal,Demo host,SEN
+2003,Tunisia Women,Tunisia Women,103,Tunisia,WOMEN,SENIOR,NATIONAL,1,Tunisia,Demo host,TUN
+2004,Côte d'Ivoire Women,Côte d'Ivoire Women,104,Côte d'Ivoire,WOMEN,SENIOR,NATIONAL,1,Côte d'Ivoire,Demo host,CIV

@@ -1,32 +1,28 @@
-# FRMF data
-data/raw/*
-data/processed/*
-data/exports/*
-
-# Local databases
-*.db
-*.sqlite
-*.sqlite3
-
-# Power BI
-*.pbix
-
-# Secrets
+# Local configuration
 .env
 .env.*
 !.env.example
 
-# Generated/private outputs
-artifacts/*
+# Private inputs and generated data
+/data/*
+!/data/synthetic/
+*.db
+*.sqlite
+*.sqlite3
+/assistant/synthetic-snapshot.json
+/assistant/*.refresh-*.json
 
-# Python
-__pycache__/
-*.py[cod]
+# Runtimes, dependencies and caches
+node_modules/
 .venv/
 venv/
-
-# macOS
+__pycache__/
+*.py[cod]
+.run/
+models/
+*.log
 .DS_Store
 
-data/ 
-mydata 2.0/
+# Keep only the delivered Power BI report
+*.pbix
+!/powerbi/report.pbix

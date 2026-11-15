@@ -1,0 +1,7 @@
+﻿competition_id,name,category,age_group,team_type,format,is_synthetic
+1,Botola Pro D1,MEN,SENIOR,CLUB,LEAGUE,1
+2,Championnat Féminin D1,WOMEN,SENIOR,CLUB,LEAGUE,1
+3,Championnat National U19 Masculin,MEN,U19,CLUB,LEAGUE,1
+4,Championnat National U19 Féminin,WOMEN,U19,CLUB,LEAGUE,1
+5,Coupe du Trône,MEN,SENIOR,CLUB,CUP,1
+6,Tournoi International Féminin,WOMEN,SENIOR,NATIONAL,TOURNAMENT,1

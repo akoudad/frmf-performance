@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FRMF Assistant · Local pilot</title>
+  <style>
+    :root{font:15px/1.5 system-ui,-apple-system,sans-serif;color:#22302a;background:#f6f6f3}*{box-sizing:border-box}body{margin:0}header{background:#192820;color:#fff;padding:18px 32px;display:flex;align-items:center;gap:14px}header strong{font-size:22px}header span{color:#bfcbc3;font-size:13px}main{max-width:1080px;margin:32px auto;padding:0 24px}h1{font-size:28px;letter-spacing:-.8px;margin:0 0 6px}p{margin:8px 0 16px}.muted{color:#637269}.status{font-size:13px}.filters{display:grid;grid-template-columns:1fr 2fr 2fr;gap:16px;margin:22px 0}label{display:block;font-size:13px;font-weight:600;margin-bottom:5px}select,textarea,button{font:inherit}select,textarea{width:100%;border:1px solid #ccd3cd;border-radius:5px;background:white;color:inherit;padding:10px}textarea{min-height:96px;resize:vertical}button{border:1px solid #ccd3cd;border-radius:5px;padding:9px 14px;background:white;color:inherit;cursor:pointer}button:hover{border-color:#176349}button:disabled{opacity:.55;cursor:wait}.primary{background:#145c44;border-color:#145c44;color:white}.examples{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.examples button{font-size:13px}.send{display:flex;align-items:center;justify-content:space-between;margin:12px 0 24px;gap:16px}.answer{background:white;border:1px solid #dce0db;border-radius:6px;padding:24px}.answer h2{font-size:18px;margin:0 0 8px}.answer p{white-space:pre-wrap}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:16px 0}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #e5e8e3;white-space:nowrap}th{font-size:12px;color:#637269;font-weight:600}th:first-child,td:first-child{padding-left:0}details{font-size:12px;color:#637269;margin-top:20px}pre{white-space:pre-wrap;word-break:break-word}.notice{color:#875818}.footer{font-size:12px;color:#637269;margin-top:18px}@media(max-width:650px){.filters{grid-template-columns:1fr}.send{align-items:flex-start}.examples button{flex-grow:1}}
+  </style>
+  <style>
+    .examples[hidden],.request-progress[hidden]{display:none}
+    .result-section{padding-top:18px;margin-top:18px;border-top:1px solid #e5e8e3}.result-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}.result-heading h3{font-size:16px;margin:0}.result-evidence{font-size:12px;color:#176349}.result-note{font-size:13px;margin:8px 0!important}.result-warnings{font-size:13px;padding-left:20px;margin:8px 0}.query-evidence{scroll-margin-top:20px}
+    .request-progress{margin:16px 0 4px;padding:14px 0;border-top:1px solid #e5e8e3}
+    .progress-line{display:flex;align-items:center;gap:10px;font-size:14px}
+    .progress-label{font-weight:600}.elapsed{color:#637269;font-variant-numeric:tabular-nums;margin-left:auto}
+    .cancel{padding:5px 10px;font-size:12px}.progress-detail{font-size:13px;color:#637269;margin:8px 0 0!important}
+    .spinner{display:inline-block;width:15px;height:15px;border:2px solid #dce3dd;border-top-color:#145c44;border-radius:50%;animation:turn 1s linear infinite;flex-shrink:0}
+    .season-picker{position:relative;margin:0;color:inherit;font-size:15px}.season-picker>summary{list-style:none;cursor:pointer;border:1px solid #ccd3cd;border-radius:5px;background:white;padding:10px;display:flex;justify-content:space-between;align-items:center;gap:10px}.season-picker>summary::-webkit-details-marker{display:none}.season-picker>summary::after{content:'⌄';color:#637269}.season-picker>summary[aria-disabled=true]{opacity:.55;cursor:wait}.season-panel{position:absolute;z-index:4;top:calc(100% + 5px);left:0;width:max(100%,240px);padding:14px;background:#fff;border:1px solid #ccd3cd;border-radius:5px}.season-panel fieldset{padding:0;margin:10px 0 0;border:0}.season-panel legend{font-size:12px;color:#637269;margin-bottom:7px}.season-option{display:flex;align-items:center;gap:10px;margin:0;padding:8px 0;font-size:14px;font-weight:400;cursor:pointer}.season-option input{width:16px;height:16px;accent-color:#145c44}.season-panel button{width:100%;padding:6px 10px;text-align:left;font-size:13px}.season-help{font-size:12px;color:#637269;margin:8px 0 0}
+    .conversation-history[hidden],.follow-up[hidden]{display:none}.conversation-history{padding:0 0 14px;margin-bottom:16px;border-bottom:1px solid #e5e8e3}.conversation-history h3{font-size:12px;font-weight:600;color:#637269;margin:0 0 8px}.conversation-history ol{list-style:none;padding:0;margin:0;display:grid;gap:8px}.conversation-history li{font-size:13px;white-space:pre-wrap}.conversation-history strong{display:block;color:#637269;font-size:12px}.follow-up{display:flex;gap:10px;align-items:center;margin:8px 0 14px;font-size:13px}.follow-up button{padding:5px 10px;font-size:12px}.evidence-scope{display:grid;grid-template-columns:max-content 1fr;gap:5px 14px;margin:12px 0}.evidence-scope dt{font-weight:600}.evidence-scope dd{margin:0;overflow-wrap:anywhere}.query-evidence{border-top:1px solid #e5e8e3;padding-top:10px;margin-top:12px}.query-evidence summary{cursor:pointer}.query-evidence pre{padding:10px;background:#f6f6f3;color:#34473d;border-radius:4px}.evidence-label{font-weight:600;margin:10px 0 5px!important}.query-evidence table{font-size:12px}.query-evidence th,.query-evidence td{padding:7px 9px}
+    @keyframes turn{to{transform:rotate(360deg)}}
+    @media(prefers-reduced-motion:reduce){.spinner{animation:none}}
+  </style>
+</head>
+<body>
+  <header><strong>FRMF</strong><span>Performance Intelligence</span></header>
+  <main>
+    <div class="status muted" id="status">Connecting to the local service…</div>
+    <h1>Football data assistant</h1>
+    <p class="muted">Ask about the synthetic football statistics. Your Mac processes each request.</p>
+    <div class="filters">
+      <div><label id="seasons-label">Seasons</label><details class="season-picker" id="seasons-picker"><summary id="seasons-summary" aria-labelledby="seasons-label seasons-summary" aria-disabled="true">Loading seasons…</summary><div class="season-panel"><button type="button" id="all-seasons">All seasons</button><fieldset id="seasons-list"><legend>Select one or more seasons</legend></fieldset><p class="season-help">Keep at least one season selected.</p></div></details></div>
+      <div><label for="competition">Competition</label><select id="competition"></select></div>
+      <div><label for="team">Club</label><select id="team"></select></div>
+    </div>
+    <div class="examples">
+      <button data-example="Show top assist providers">Top assist providers</button>
+      <button data-example="Show top scorers">Top scorers</button>
+      <button data-example="Rank total goals plus assists">Goals + assists</button>
+      <button data-example="One leading player for goals and assists combined in each category, men and women">Men &amp; women leaders</button>
+      <button data-example="Show Omar Housni totals">Omar Housni totals</button>
+      <button data-example="Show Hassania Agadir team totals">Hassania Agadir totals</button>
+    </div>
+    <form id="form">
+      <label for="question" id="question-label">Question</label>
+      <textarea id="question" maxlength="1000" required placeholder="Show top assist providers"></textarea>
+      <div class="follow-up" id="follow-up" hidden><span class="muted">Your reply continues the question below.</span><button type="button" id="new-question">Ask a new question</button></div>
+      <div class="send"><span class="muted status">Synthetic demonstration data · read-only pilot</span><button class="primary" id="submit" type="submit">Ask assistant</button></div>
+    </form>
+    <section class="answer" id="answer-section" aria-live="polite">
+      <div class="conversation-history" id="conversation-history" hidden><h3>This question</h3><ol id="conversation-turns"></ol></div>
+      <h2 id="answer-title">Ready to explore</h2>
+      <p id="answer">Compare players and teams, explore changes across seasons, or ask for an analysis of the selected data.</p>
+      <div class="request-progress" id="request-progress" hidden>
+        <div class="progress-line"><span class="spinner" aria-hidden="true"></span><span class="progress-label" id="progress-label" role="status"></span><span class="elapsed" id="progress-time" aria-hidden="true">0s</span><button type="button" class="cancel" id="cancel-request">Cancel</button></div>
+        <p class="progress-detail" id="progress-detail"></p>
+      </div>
+      <p class="notice" id="notice" hidden></p>
+      <div class="examples" id="clarification" role="group" aria-label="Suggested replies" hidden></div>
+      <div id="table" aria-busy="false"></div>
+      <details id="evidence-details" hidden><summary>View sources, scope and query evidence</summary><div id="evidence"></div></details>
+    </section>
+    <div class="footer">This temporary pilot has no employee login yet. It serves a checked synthetic snapshot only; it does not connect to live federation records.</div>
+  </main>
+  <script type="module">
+    import { createScopeRequests } from './scope-state.mjs';
+    import { progressStages, readChatResponse } from './progress-state.mjs';
+    import { normalizeSeasonSelection, toggleSeason, seasonSelectionSummary, seasonCatalogParams } from './season-selection.mjs';
+    import { queryEvidenceAnchor, renderResultSections } from './result-sections.mjs';
+    const $ = id => document.getElementById(id);
+    const requests = createScopeRequests();
+    let availableSeasons=[], selectedSeasons=['2025-2026'], seasonsReady=false;
+    let conversationToken=null, conversationTurns=[], progressTimer;
+    const context = () => ({seasons:[...selectedSeasons],competition:$('competition').value||'Botola Pro D1',team:$('team').value||'All'});
+    const examples = [...document.querySelectorAll('[data-example]')];
+    function renderSeasons() {
+      $('seasons-summary').textContent=seasonSelectionSummary(availableSeasons,selectedSeasons);
+      $('seasons-summary').title=selectedSeasons.join(', ');
+      $('seasons-summary').setAttribute('aria-disabled',String(!seasonsReady));
+      $('all-seasons').disabled=!seasonsReady || selectedSeasons.length===availableSeasons.length;
+      const legend=document.createElement('legend'); legend.textContent='Select one or more seasons';
+      $('seasons-list').replaceChildren(legend);
+      for(const season of [...availableSeasons].reverse()) {
+        const label=document.createElement('label'); label.className='season-option';
+        const checkbox=document.createElement('input'); checkbox.type='checkbox'; checkbox.value=season; checkbox.id=`season-${season}`;
+        checkbox.checked=selectedSeasons.includes(season); checkbox.disabled=!seasonsReady || checkbox.checked && selectedSeasons.length===1;
+        checkbox.addEventListener('change',()=>{
+          selectedSeasons=toggleSeason(availableSeasons,selectedSeasons,season,checkbox.checked);
+          renderSeasons(); scopeChanged(true); $(`season-${season}`).focus();
+        });
+        label.append(checkbox,document.createTextNode(season.replace('-','–'))); $('seasons-list').append(label);
+      }
+    }
+    $('seasons-summary').addEventListener('click',event=>{ if(!seasonsReady) event.preventDefault(); });
+    $('all-seasons').addEventListener('click',()=>{
+      selectedSeasons=normalizeSeasonSelection(availableSeasons,availableSeasons); renderSeasons(); scopeChanged(true);
+    });
+    document.addEventListener('click',event=>{ if(!$('seasons-picker').contains(event.target)) $('seasons-picker').open=false; });
+    $('seasons-picker').addEventListener('keydown',event=>{
+      if(event.key==='Escape') { $('seasons-picker').open=false; $('seasons-summary').focus(); }
+    });
+    function renderConversation() {
+      $('conversation-turns').replaceChildren();
+      const visibleTurns=conversationTurns.at(-1)?.role==='assistant'?conversationTurns.slice(0,-1):conversationTurns;
+      for(const turn of visibleTurns) {
+        const item=document.createElement('li'), who=document.createElement('strong');
+        who.textContent=turn.role==='user'?'You':'Assistant'; item.append(who,document.createTextNode(turn.text));
+        $('conversation-turns').append(item);
+      }
+      $('conversation-history').hidden=visibleTurns.length===0;
+      $('follow-up').hidden=!conversationToken;
+      $('question-label').textContent=conversationToken?'Your reply':'Question';
+      $('question').placeholder=conversationToken?'Type your clarification…':'Ask about your selected football data';
+      $('submit').textContent=conversationToken?'Send reply':'Ask assistant';
+    }
+    function resetConversation() { conversationToken=null; conversationTurns=[]; renderConversation(); }
+    function stopProgress() {
+      clearInterval(progressTimer); progressTimer=undefined;
+      $('request-progress').hidden=true; $('table').setAttribute('aria-busy','false');
+    }
+    function startProgress(token) {
+      stopProgress();
+      const started=performance.now(); let stage='sending';
+      $('request-progress').hidden=false; $('table').setAttribute('aria-busy','true');
+      function render() {
+        if(!token.isCurrent()) { stopProgress(); return; }
+        const seconds=Math.floor((performance.now()-started)/1000);
+        $('progress-time').textContent=`${seconds}s`;
+        const label=progressStages[stage].label;
+        const detail=stage==='interpreting' && seconds>=20
+          ? 'Still waiting for the local model. A first request can take longer; you can cancel at any time.'
+          : stage==='interpreting' && seconds>=8 ? 'Still working locally on your Mac. Your selected scope is kept with this request.' : progressStages[stage].detail;
+        if($('progress-label').textContent!==label) $('progress-label').textContent=label;
+        if($('progress-detail').textContent!==detail) $('progress-detail').textContent=detail;
+      }
+      render(); progressTimer=setInterval(render,1000);
+      return nextStage=>{ if(token.isCurrent() && progressStages[nextStage]) { stage=nextStage; render(); } };
+    }
+    function setBusy(busy) {
+      $('submit').disabled=busy; examples.forEach(button=>button.disabled=busy);
+      $('clarification').querySelectorAll('button').forEach(button=>button.disabled=busy);
+    }
+    async function request(path, options) {
+      const res=await fetch(path,options); const data=await res.json();
+      if(!res.ok) throw new Error(data.error || 'Request failed');
+      return data;
+    }
+    function options(select, entries, chosen, all) {
+      select.replaceChildren();
+      if(all) select.add(new Option(all,'All'));
+      entries.forEach(x=>select.add(new Option(x.name||x,x.name||x)));
+      if([...select.options].some(o=>o.value===chosen)) select.value=chosen;
+    }
+    function clearAnswer(title='Selection changed', message='Ask again to see results for the current selection.') {
+      stopProgress();
+      $('answer-title').textContent=title; $('answer').textContent=message;
+      $('table').replaceChildren(); $('notice').textContent=''; $('notice').hidden=true;
+      $('evidence').replaceChildren(); $('evidence-details').hidden=true; $('evidence-details').open=false;
+      $('clarification').replaceChildren(); $('clarification').hidden=true;
+    }
+    function showError(error) { clearAnswer('Could not complete the request', error.message); }
+    async function loadCatalog(initial=false) {
+      const selected=context(); const token=requests.begin('catalog');
+      setBusy(true); $('team').disabled=true;
+      try {
+        const data=await request('/api/catalog?'+seasonCatalogParams(selected),{signal:token.signal});
+        if(!token.isCurrent()) return;
+        availableSeasons=Array.isArray(data.seasons)?data.seasons:[];
+        if(!availableSeasons.length) throw new Error('No seasons are available in the local data.');
+        selectedSeasons=normalizeSeasonSelection(availableSeasons,selected.seasons);
+        seasonsReady=true; renderSeasons();
+        if(initial) options($('competition'),data.competitions,'Botola Pro D1','All competitions');
+        options($('team'),data.teams,selected.team,'All clubs');
+        $('competition').disabled=false; $('team').disabled=false; setBusy(false);
+      } catch(error) {
+        if(!token.isCurrent() || error.name==='AbortError') return;
+        showError(error); $('competition').disabled=false;
+      }
+    }
+    function scopeChanged(reload) {
+      if(conversationToken && conversationTurns[0]?.role==='user') $('question').value=conversationTurns[0].text;
+      requests.invalidate(); resetConversation(); clearAnswer();
+      if(reload) {
+        options($('team'),[],'All','All clubs'); void loadCatalog();
+      } else setBusy(false);
+    }
+    $('competition').addEventListener('change',()=>scopeChanged(true));
+    $('team').addEventListener('change',()=>scopeChanged(false));
+    $('cancel-request').addEventListener('click',()=>{
+      requests.invalidate(); clearAnswer('Request cancelled','Your question is kept above. Edit it or ask again when ready.'); setBusy(false);
+    });
+    $('new-question').addEventListener('click',()=>{
+      requests.invalidate(); resetConversation(); clearAnswer('Ready to explore','Ask a new question within the selected scope.');
+      $('question').value=''; setBusy(false); $('question').focus();
+    });
+    examples.forEach(button=>button.addEventListener('click',()=>{
+      if($('submit').disabled) return;
+      resetConversation(); $('question').value=button.dataset.example; $('form').requestSubmit();
+    }));
+    const labelFor = key => key==='goalContributions'?'Goals + assists':String(key).replace(/([A-Z])/g,' $1').replace(/_/g,' ').replace(/^./,s=>s.toUpperCase());
+    const valueFor = (value,key) => value===null || value===undefined?'Not available':typeof value==='number' && !Number.isInteger(value)?new Intl.NumberFormat('en',{maximumFractionDigits:4}).format(value):typeof value==='object'?JSON.stringify(value):String(value);
+    function appendTable(container,rows,columns) {
+      if(!Array.isArray(rows) || !rows.length) return;
+      const keys=Array.isArray(columns) && columns.length?columns.map(column=>typeof column==='string'?column:column.name):[...new Set(rows.flatMap(row=>Object.keys(row)))];
+      const table=document.createElement('table'), head=table.createTHead().insertRow();
+      keys.forEach(key=>{ const th=document.createElement('th'); th.textContent=labelFor(key); th.scope='col'; head.append(th); });
+      const body=table.createTBody();
+      for(const row of rows) {
+        const tr=body.insertRow(); keys.forEach((key,index)=>{ tr.insertCell().textContent=valueFor(Array.isArray(row)?row[index]:row[key],key); });
+      }
+      container.append(table);
+    }
+    function showEvidence(evidence={}) {
+      const container=$('evidence'); container.replaceChildren();
+      const fields=document.createElement('dl'); fields.className='evidence-scope';
+      function add(label,value) {
+        if(value===undefined || value===null || value==='' || Array.isArray(value) && !value.length) return;
+        const term=document.createElement('dt'), detail=document.createElement('dd'); term.textContent=label;
+        detail.textContent=Array.isArray(value)?value.join(', '):valueFor(value); fields.append(term,detail);
+      }
+      add('Source',evidence.source); add('Data as of',evidence.updatedAt);
+      if(evidence.sourceVersion) add('Data version',evidence.sourceVersion.slice(0,12));
+      add('Data',evidence.isSynthetic===true?'Synthetic demonstration data':evidence.isSynthetic===false?'Reported data':undefined);
+      for(const [key,value] of Object.entries(evidence.scopeLabels||evidence.scope||{})) add(labelFor(key),value);
+      container.append(fields);
+      if(Array.isArray(evidence.queries)) for(const [index,query] of evidence.queries.entries()) {
+        const details=document.createElement('details'); details.className='query-evidence';
+        details.id=queryEvidenceAnchor(index);
+        const summary=document.createElement('summary'), count=query.rowCount??query.rows?.length??0;
+        summary.textContent=`Query ${index+1}${query.id?` · ${query.id}`:''} · ${count} result row${count===1?'':'s'}${query.truncated?' · limited result':''}`;
+        details.append(summary);
+        if(typeof query.sql==='string') { const sql=document.createElement('pre'); sql.textContent=query.sql; details.append(sql); }
+        const rows=Array.isArray(query.rows)?query.rows:[];
+        if(rows.length) {
+          const note=document.createElement('p'); note.textContent=rows.length>20?`Preview: first 20 of ${rows.length} returned rows.`:'Returned query records'; note.className='evidence-label'; details.append(note);
+          const wrap=document.createElement('div'); wrap.className='table-wrap'; appendTable(wrap,rows.slice(0,20),query.columns); details.append(wrap);
+        }
+        if(query.truncated) { const note=document.createElement('p'); note.textContent='The query result was limited. These records may not include every matching row.'; details.append(note); }
+        container.append(details);
+      }
+      if(Array.isArray(evidence.sourceCatalog?.tables)) {
+        const catalog=document.createElement('details'), heading=document.createElement('summary');
+        heading.textContent='Available source tables and columns'; catalog.append(heading);
+        const note=document.createElement('p');
+        note.textContent='Connected tables can supply records within your selections. Other tables are discovered in the source but still need a connection to those selections.';
+        catalog.append(note);
+        for(const table of evidence.sourceCatalog.tables) {
+          const details=document.createElement('details'), title=document.createElement('summary');
+          title.textContent=table.name+' · '+(table.access==='queryable'?'Connected':'Source found · connection needed');
+          const columns=document.createElement('p');
+          columns.textContent=table.columns.map(column=>column.name+' ('+column.type+')').join(', ');
+          details.append(title,columns);
+          if(table.grain) { const grain=document.createElement('p'); grain.textContent=table.grain; details.append(grain); }
+          catalog.append(details);
+        }
+        container.append(catalog);
+      }
+      const extra=document.createElement('details'), summary=document.createElement('summary'), raw=document.createElement('pre');
+      summary.textContent='Additional source details';
+      const {queries,...metadata}=evidence; raw.textContent=JSON.stringify(metadata,null,2); extra.append(summary,raw); container.append(extra);
+      $('evidence-details').hidden=false;
+    }
+    function openQueryEvidence(anchor) {
+      const details=$(anchor); if(!details) return;
+      $('evidence-details').open=true; details.open=true;
+      details.scrollIntoView({block:'start'}); details.querySelector('summary').focus({preventScroll:true});
+    }
+    async function askQuestion(legacy={}) {
+      if($('submit').disabled) return;
+      const token=requests.begin('answer'), selected=context(), question=$('question').value.trim();
+      if(!question) return;
+      const replyToken=conversationToken;
+      if(!replyToken && !legacy.rankingBasis) conversationTurns=[];
+      if(!legacy.rankingBasis && !(conversationTurns.at(-1)?.role==='user' && conversationTurns.at(-1)?.text===question)) conversationTurns.push({role:'user',text:question});
+      renderConversation(); setBusy(true); clearAnswer('Working on your question…','');
+      const updateProgress=startProgress(token);
+      try {
+        const res=await fetch('/api/chat',{method:'POST',signal:token.signal,headers:{'Content-Type':'application/json','Accept':'application/x-ndjson'},body:JSON.stringify({question,context:selected,...(replyToken?{conversationToken:replyToken}:{}),...(legacy.rankingBasis?{rankingBasis:legacy.rankingBasis}:{}),...(legacy.clarificationToken?{clarificationToken:legacy.clarificationToken}:{})})});
+        const data=await readChatResponse(res,updateProgress);
+        if(!token.isCurrent()) return;
+        stopProgress();
+        const clarification=data.clarification;
+        const genericClarification=clarification && clarification.field!=='rankingBasis' && typeof clarification.token==='string';
+        $('answer-title').textContent=clarification?'A quick clarification':data.status==='incomplete'?'Partial results':'Local assistant response';
+        $('answer').textContent=typeof data.answer==='string'?data.answer:clarification?.question||'The request returned no answer.';
+        if(genericClarification) {
+          conversationToken=clarification.token;
+          const followup=typeof clarification.question==='string'?clarification.question:data.answer;
+          if(followup) conversationTurns.push({role:'assistant',text:followup});
+          if(typeof clarification.question==='string') $('answer').textContent=clarification.question;
+          for(const choice of Array.isArray(clarification.options)?clarification.options:[]) {
+            if(typeof choice!=='string' || !choice.trim() || choice.length>1000) continue;
+            const button=document.createElement('button'); button.type='button'; button.textContent=choice;
+            button.addEventListener('click',()=>{ if(!$('submit').disabled) { $('question').value=choice; $('form').requestSubmit(); } });
+            $('clarification').append(button);
+          }
+          if($('question').value.trim()===question) $('question').value='';
+        } else {
+          conversationToken=null;
+          if(clarification?.field==='rankingBasis' && Array.isArray(clarification.options)) {
+            for(const choice of clarification.options) {
+              if(!['total','perAppearance'].includes(choice.value) || typeof choice.label!=='string') continue;
+              const button=document.createElement('button'); button.type='button'; button.textContent=choice.label;
+              button.addEventListener('click',()=>{
+                if($('question').value.trim()!==question) { clearAnswer('Question changed','Submit your edited question to continue.'); return; }
+                void askQuestion({rankingBasis:choice.value,clarificationToken:clarification.token});
+              }); $('clarification').append(button);
+            }
+          }
+        }
+        $('clarification').hidden=$('clarification').childElementCount===0; renderConversation();
+        if(data.notice) { $('notice').textContent=data.notice; $('notice').hidden=false; }
+        showEvidence({...data.evidence,mode:data.mode,model:data.model||'none',status:data.status,latencyMs:data.latencyMs,modelCalls:data.modelCalls});
+        renderResultSections($('table'),data,{appendTable,openEvidence:openQueryEvidence});
+        if(genericClarification) $('question').focus();
+      } catch(error) {
+        if(token.isCurrent() && error.name!=='AbortError') {
+          if(replyToken && /clarification expired|conversation.*expired|source data changed/i.test(error.message)) {
+            conversationToken=null;
+            if(conversationTurns[0]?.role==='user') $('question').value=conversationTurns[0].text;
+            renderConversation(); showError(new Error(`${error.message} Your original question is restored above.`));
+          } else showError(error);
+        }
+      } finally { if(token.isCurrent()) { stopProgress(); setBusy(false); } }
+    }
+    $('form').addEventListener('submit',event=>{ event.preventDefault(); void askQuestion(); });
+    setBusy(true); $('competition').disabled=true; $('team').disabled=true;
+    void loadCatalog(true);
+    request('/api/health').then(health=>{
+      $('status').textContent=health.model==='none'?'Connected · Mac pilot · fixed statistics operations'
+        : health.modelHealth?.available?'Model available · Mac pilot · '+health.model
+        : 'AI unavailable · '+(health.modelHealth?.message || 'The model connection has not been verified.');
+    }).catch(()=>{ $('status').textContent='Website service unavailable'; });
+  </script>
+</body>
+</html>
